@@ -103,8 +103,7 @@ public class Calculations {
         double det = a1 * b2 - b1 * a2; //determinant
         double detX = c1 * b2 - b1 * c2; // determinant for X
         double detY = a1 * c2 - c1 * a2; // determinant fot Y
-        Point result = new Point(detX / det, detY / det); //intersection Point
-        return result;
+        return new Point(detX / det, detY / det);
     }
 
     /**
@@ -147,12 +146,13 @@ public class Calculations {
         double partition = distancePart / distanceAll;
         double xNew = ball.getX() + ball.getVelocity().getDx() * partition;
         double yNew = ball.getY() +  ball.getVelocity().getDy() * partition;    //partition to step
+        double x,y;
          switch (ans) {
             case "Vertical":
-                double x = p.getX() - signX * r;
+                x = p.getX() - signX * r;
                 return new Point(x, yNew);
             case "Horizontal":
-                 double y = p.getY() - signY * r;
+                 y = p.getY() - signY * r;
                  return new Point(xNew, y);
             default:
                  x = p.getX() - signX * (r * Math.cos(angle));
@@ -208,20 +208,13 @@ public class Calculations {
         double speed = Math.sqrt(Math.pow(v.getDx(), 2) + Math.pow(v.getDy(), 2));
         double angle;
         switch (ans) {
-            case 1:
-                angle = 210;
-                break;
-            case 2:
-                angle = 240;
-                break;
-            case 4:
-                angle = 300;
-                break;
-            case 5:
-                angle = 330;
-                break;
-            default:
+            case 1 -> angle = 210;
+            case 2 -> angle = 240;
+            case 4 -> angle = 300;
+            case 5 -> angle = 330;
+            default -> {
                 return v.turn("Horizontal");
+            }
         }
         return Velocity.fromAngleAndSpeed(angle, speed);
     }

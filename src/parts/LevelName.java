@@ -29,6 +29,5 @@ public class LevelName implements Sprite {
 
     @Override
     public void timePassed() {
-        return;
     }
 }

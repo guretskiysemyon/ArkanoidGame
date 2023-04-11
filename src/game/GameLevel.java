@@ -166,7 +166,7 @@ public class GameLevel implements Animation {
         int widthFrame = Archive.WIDTH_OF_FRAME;
         double x = (double) widthFrame / Archive.TWO - width / Archive.TWO;    //start location  middle of set
         double y = Archive.HEIGHT_OF_FRAME - Archive.WIDTH_OF_LIMITS - height;
-        Block b = new Block(new Rectangle(new Point(x, y), width, height), Color.ORANGE); //TODO
+        Block b = new Block(new Rectangle(new Point(x, y), width, height), Color.ORANGE);
         Paddle pad = new Paddle(b, this.keyboard); //start paddle
         pad.setdX(this.levelInfo.paddleSpeed()); //set speed
         pad.setGame(this);   //set the game
