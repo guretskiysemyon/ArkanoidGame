@@ -1,11 +1,11 @@
 # ArkanoidGame
 
-## Context of the project::
+## Context of the project
 This project was completed as part of the course "Introduction to Object Oriented Programming" using the Java programming language. 
 The primary goal of this project was to learn key concepts in OOP, coding principles, design patterns, file hierarchy, and packages.
 The project consists of four levels of an Arkanoid Game, which will be discussed in the following sections.
 
-## Installation:
+## Installation
 I developed this project using the IntelliJ IDEA IDE (produced by JetBrains). If you use this IDE as well, you can clone this repository. Otherwise, you can create a new Java project in your preferred IDE and copy the source files from the src folder of this repository into the appropriate location in your project.
 
 To use the GUI, you will need to add the biuoop-1.4.jar file to your project as a library. This file was provided to me by the university.
