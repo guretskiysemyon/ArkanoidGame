@@ -34,7 +34,7 @@ public class Rectangle {
      * @return List of Lines
      */
     private java.util.List<Line> createSides() {
-        List<Line> result = new ArrayList<Line>();  //new list
+        List<Line> result = new ArrayList<>();  //new list
         Point p2 = new Point(this.upperLeft.getX() + this.width, this.upperLeft.getY()); //upperRight
         Point p3 = new Point(this.upperLeft.getX() + this.width, this.upperLeft.getY() + this.height); //lowerRight
         Point p4 = new Point(this.upperLeft.getX(), this.upperLeft.getY() + this.height);    //lowerLeft
@@ -51,7 +51,7 @@ public class Rectangle {
      * @return list of intersections points or null if there is no intersection
      * */
     public java.util.List<Point> intersectionPoints(Line line) {
-      List<Point> result = new ArrayList<Point>();  //new list
+      List<Point> result = new ArrayList<>();  //new list
       List<Line> sides = createSides(); //help function
       for (Line x : sides) {        //check for every side
           Point p = line.intersectionWith(x);
@@ -96,9 +96,7 @@ public class Rectangle {
         double x = p.getX();
         double y = p.getY();
         if (x >= this.upperLeft.getX() && x <= (this.upperLeft.getX() + this.width)) {
-            if (y >= this.upperLeft.getY() && y <= this.upperLeft.getY() + this.height) {
-                return true;
-            }
+            return y >= this.upperLeft.getY() && y <= this.upperLeft.getY() + this.height;
         }
         return false;
     }

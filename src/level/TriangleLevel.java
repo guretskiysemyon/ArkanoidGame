@@ -50,12 +50,10 @@ public class TriangleLevel extends GeneralLevel {
      */
     private List<Block> initializeBlocks() {
         List<Block> list = new ArrayList<>();
-        int x1 = X_ONE;
-        int x2 = X_TWO;
         int y = Y_ONE;
         for (int i = 0; i < NUMBER_BLOCKS; i++) {
-            Block b  = new Block(new Rectangle(new Point(x1, y), SIZE, SIZE * Archive.DOUBLE), Color.MAGENTA);
-            Block b1 = new Block(new Rectangle(new Point(x2, y), SIZE, SIZE * Archive.DOUBLE), Color.MAGENTA);
+            Block b  = new Block(new Rectangle(new Point(X_ONE, y), SIZE, SIZE * Archive.DOUBLE), Color.MAGENTA);
+            Block b1 = new Block(new Rectangle(new Point(X_TWO, y), SIZE, SIZE * Archive.DOUBLE), Color.MAGENTA);
             list.add(b);
             list.add(b1);
             y += SIZE * Archive.DOUBLE;

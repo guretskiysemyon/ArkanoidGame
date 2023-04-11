@@ -39,24 +39,16 @@ public class Archive {
     public static java.awt.Color getColor(int i) {
         int cases = 8;
         i = i % cases;
-        switch (i) {      //color that return
-            case 1:
-                return Color.BLUE;
-            case 2:
-                return Color.GREEN;
-            case 3:
-                return Color.MAGENTA;
-            case 4:
-                return Color.RED;
-            case 5:
-                return Color.ORANGE;
-            case 6:
-                return Color.PINK;
-            case 7:
-                return Color.DARK_GRAY;
-            default:
-                return Color.CYAN;
-        }
+        return switch (i) {      //color that return
+            case 1 -> Color.BLUE;
+            case 2 -> Color.GREEN;
+            case 3 -> Color.MAGENTA;
+            case 4 -> Color.RED;
+            case 5 -> Color.ORANGE;
+            case 6 -> Color.PINK;
+            case 7 -> Color.DARK_GRAY;
+            default -> Color.CYAN;
+        };
     }
 
 }

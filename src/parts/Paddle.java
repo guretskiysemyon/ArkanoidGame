@@ -160,12 +160,10 @@ public class Paddle implements Sprite, Collidable {
         }
         String ans = Calculations.witchWall(this.paddle.getCollisionRectangle(), collisionPoint);   //check which wall.
          if (ans.equals("Vertical")) {    //vertical
-            Velocity v = currentVelocity.turn(ans);
-            return v;
+             return currentVelocity.turn(ans);
         }   //horizontal
         int section = Calculations.paddleSection(this, collisionPoint);
-        Velocity vNew = Calculations.paddleVelocity(section, currentVelocity);
-        return vNew;
+        return Calculations.paddleVelocity(section, currentVelocity);
     }
 
     /**

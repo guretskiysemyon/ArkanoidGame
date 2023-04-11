@@ -67,23 +67,22 @@ public class Bear implements Sprite {
         for (int i = 0; i < COORDINATES.length; i++) {
             points.put(POINT_NAMES[i], new Point(COORDINATES[i][Archive.FIRST], COORDINATES[i][Archive.SECOND]));
         }
-        for (int i = 0; i < SEGMENTS.length; i++) {
-            Point p1 = points.get(SEGMENTS[i][Archive.FIRST]);
-            Point p2 = points.get(SEGMENTS[i][Archive.SECOND]);
+        for (String[] segment : SEGMENTS) {
+            Point p1 = points.get(segment[Archive.FIRST]);
+            Point p2 = points.get(segment[Archive.SECOND]);
             this.lines.add(new Line(p1, p2));
         }
 
     }
     @Override
     public void drawOn(DrawSurface d) {
-        for (int i = 0; i < this.lines.size(); i++) {
-            d.drawLine((int) this.lines.get(i).start().getX(), (int) this.lines.get(i).start().getY(),
-                    (int) this.lines.get(i).end().getX(), (int) this.lines.get(i).end().getY());
+        for (Line line : this.lines) {
+            d.drawLine((int) line.start().getX(), (int) line.start().getY(),
+                    (int) line.end().getX(), (int) line.end().getY());
         }
     }
 
     @Override
     public void timePassed() {
-        return;
     }
 }

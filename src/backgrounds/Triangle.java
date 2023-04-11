@@ -37,9 +37,9 @@ public class Triangle implements Sprite {
         for (int i = 0; i < COORDINATES.length; i++) {
             map.put(POINTS_NAME[i], new Point(COORDINATES[i][Archive.FIRST], COORDINATES[i][Archive.SECOND]));
         }
-        for (int i = 0; i < SEGMENTS.length; i++) {
-            Point p1 = map.get(SEGMENTS[i][Archive.FIRST]);
-            Point p2 = map.get(SEGMENTS[i][Archive.SECOND]);
+        for (String[] segment : SEGMENTS) {
+            Point p1 = map.get(segment[Archive.FIRST]);
+            Point p2 = map.get(segment[Archive.SECOND]);
             this.lines.add(new Line(p1, p2));
         }
     }

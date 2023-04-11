@@ -65,6 +65,5 @@ public class GodsEye implements Sprite {
 
     @Override
     public void timePassed() {
-        return;
     }
 }

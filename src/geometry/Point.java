@@ -63,9 +63,6 @@ public class Point {
         }
         boolean dx = Math.abs(this.x - other.getX()) < EPSILON;
         boolean dy = Math.abs(this.y - other.getY()) < EPSILON;
-        if (dx && dy) {
-            return true;
-        }
-        return false;
+        return dx && dy;
     }
 }

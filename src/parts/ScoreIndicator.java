@@ -30,6 +30,5 @@ public class ScoreIndicator implements Sprite {
 
     @Override
     public void timePassed() {
-        return;
     }
 }

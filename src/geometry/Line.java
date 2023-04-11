@@ -68,8 +68,7 @@ public class Line {
     public Point middle() {
         double middleX = (start.getX() + end.getX()) * HALF;
         double middleY = (start.getY() + end.getY()) * HALF;
-        Point result = new Point(middleX, middleY);
-        return result;
+        return new Point(middleX, middleY);
     }
     /**
      * equals -- return true is the lines are equal, false otherwise.
@@ -79,10 +78,7 @@ public class Line {
     public boolean equals(Line other) {
         if ((this.start.equals(other.start)) && (this.end.equals(other.end))) {
             return true;
-        } else if ((this.start.equals(other.end)) && (this.end.equals(other.start))) {
-            return true;
-        }
-        return false;
+        } else return (this.start.equals(other.end)) && (this.end.equals(other.start));
     }
     /**
      * Check if there is intersection between two lines. Uses Calculation class for it's calculation.
@@ -111,10 +107,7 @@ public class Line {
             if ((Calculations.isPointOnLine(this, other.start)) || (Calculations.isPointOnLine(this, other.end))) {
                 return true;
             }
-            if ((Calculations.isPointOnLine(other, start)) || (Calculations.isPointOnLine(other, end))) {
-                return true;
-            }
-            return false;
+            return (Calculations.isPointOnLine(other, start)) || (Calculations.isPointOnLine(other, end));
         }
 
         /*
@@ -122,11 +115,8 @@ public class Line {
          * so we find the point and then check if the point is on the section (one of the lines).Use calculation.
          */
         Point intersection = Calculations.calIntersection(this, other);
-        if (Calculations.isPointOnSection(this, intersection)
-                && Calculations.isPointOnSection(other, intersection)) {
-            return true;
-        }
-        return false;
+        return Calculations.isPointOnSection(this, intersection)
+                && Calculations.isPointOnSection(other, intersection);
     }
 
     /**
@@ -198,9 +188,7 @@ public class Line {
                 p = x;
             }
         }
-        if (p != null) { //if find some point return, else null.
-            return p;
-        }
-        return null;
+        //if find some point return, else null.
+        return p;
     }
 }

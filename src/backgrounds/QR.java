@@ -65,9 +65,9 @@ public class QR implements Sprite {
         d.drawText((int) TEXT_LOCATION.getX(), (int) TEXT_LOCATION.getY(), TEXT, TEXT_SIZE);
         int x = START;
         int y = START;
-        for (int j = 0; j < CODE.length; j++) {
+        for (int[] ints : CODE) {
             for (int i = 0; i < CODE.length; i++) {
-                if (CODE[j][i] != 0) {
+                if (ints[i] != 0) {
                     d.fillRectangle(x, y, SIZE, SIZE);
                 }
                 x = x + SIZE;

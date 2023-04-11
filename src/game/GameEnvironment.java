@@ -14,13 +14,12 @@ import instruments.Calculations;
  */
 public class GameEnvironment {
     private List<Collidable> objects;
-    private Rectangle frame; //frame of the screen
 
     /**
      * Constructor of the Game Environment. Start new List for Collidable objects.
      */
     public GameEnvironment() {
-        this.objects = new ArrayList<Collidable>();
+        this.objects = new ArrayList<>();
     }
 
     /**
@@ -49,14 +48,14 @@ public class GameEnvironment {
                 closestPoint = p;
                 objCollision = x;
             }
-            if (closestPoint != null && p != null) {    //if there more than one object, check who is closer.
+            if (closestPoint != null && p != null) {    //if there are more than one object, check who is closer.
                 closestPoint = Calculations.closestBetweenTwo(closestPoint, p, trajectory);
                 if (closestPoint.equals(p)) {   //if the same distance then new object is object for info.
                     objCollision = x;
                 }
             }
         }
-        if (objCollision != null && closestPoint != null) { //if the parameters aren't null, then return Info.
+        if (objCollision != null) { //if the parameters aren't null, then return Info.
             return  new CollisionInfo(closestPoint, objCollision);
         }
         return null;

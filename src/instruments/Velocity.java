@@ -61,14 +61,11 @@ public class Velocity {
      * @return Velocity  - new velocity
      */
     public Velocity turn(String direction) {
-        switch (direction) { //switch case  by String
-            case "Horizontal":
-                return new Velocity(this.dx, (-1) * this.dy);
-            case "Vertical":
-                return new Velocity((-1) * this.dx, this.dy);
-            default:
-                return new Velocity((-1) * this.dx, (-1) * this.dy);
-        }
+        return switch (direction) { //switch case  by String
+            case "Horizontal" -> new Velocity(this.dx, (-1) * this.dy);
+            case "Vertical" -> new Velocity((-1) * this.dx, this.dy);
+            default -> new Velocity((-1) * this.dx, (-1) * this.dy);
+        };
     }
 
     /**
@@ -79,7 +76,6 @@ public class Velocity {
     public Point applyToPoint(Point p) {
         double x = p.getX() + this.dx;
         double y = p.getY() + this.dy;
-        Point result = new Point(x, y);
-        return result;
+        return new Point(x, y);
     }
 }

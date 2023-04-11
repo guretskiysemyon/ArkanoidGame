@@ -41,9 +41,6 @@ public class CountdownAnimation implements Animation {
     }
     @Override
     public boolean shouldStop() {
-        if (this.count == 0) {
-            return true;
-        }
-        return false;
+        return this.count == 0;
     }
 }

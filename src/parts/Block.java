@@ -102,7 +102,6 @@ public class Block implements Collidable, Sprite, HitNotifier {
      */
     @Override
     public void timePassed() {
-        return;
     }
 
     @Override
@@ -116,7 +115,7 @@ public class Block implements Collidable, Sprite, HitNotifier {
      */
     private void notifyHit(Ball hitter) {
         // Make a copy of the hitListeners before iterating over them.
-        List<HitListener> listeners = new ArrayList<HitListener>(this.hitListeners);
+        List<HitListener> listeners = new ArrayList<>(this.hitListeners);
         // Notify all listeners about a hit event:
         for (HitListener hl : listeners) {
             hl.hitEvent(this, hitter);

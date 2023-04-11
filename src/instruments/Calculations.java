@@ -21,10 +21,7 @@ public class Calculations {
      */
     public static boolean lessAccurate(double x, double x1) {
         double epsilon = Math.pow(10, -8);
-        if (Math.abs(x - x1) <= epsilon) {
-            return true;
-        }
-        return false;
+        return Math.abs(x - x1) <= epsilon;
     }
     /**
      * Static method checks if the determinant of two lines is 0.
@@ -38,10 +35,7 @@ public class Calculations {
         double b1 = l1.end().getX() - l1.start().getX(); //b1 = x2-x1 (of l1)
         double b2 = l2.end().getX() - l2.start().getX(); //of (l2)
         double det = a1 * b2 - b1 * a2; //calculation of determinant
-        if (det == 0) {
-            return true;
-        }
-        return false;
+        return det == 0;
     }
 
     /**
@@ -57,10 +51,8 @@ public class Calculations {
         double x = point.getX(); //coordinates of point
         double y = point.getY();
         double result = a * x + b * y + c; //this should be 0 if the point is on this linear function
-        if ((result == 0) && isPointOnSection(l1, point)) { // second check point on the section.
-                return true;
-        }
-        return false;
+        // second check point on the section.
+        return (result == 0) && isPointOnSection(l1, point);
     }
 
     /**
